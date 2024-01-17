@@ -11,12 +11,12 @@ if (argc < 2) { //checks if there has been any argument entered
 int nameLength = strlen(argv[1]);
 
 if (nameLength > MAX) { // compares name length to MAX
-    printf("Name too long, max 50 characters");
+    printf("Name too long, max %d characters", MAX);
     return 0; //exit program
 }
 
 if (nameLength < MIN) { // compared name length to MIN
-    printf("Name too short, min 3 characters");
+    printf("Name too short, min %d  characters", MIN);
     return 0; //exit program
 }
 
