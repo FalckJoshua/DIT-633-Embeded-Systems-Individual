@@ -1,6 +1,6 @@
 #include <stdio.h> //Used for printf()
-// #include <unistd.h> //Used for sleep()
-#include <windows.h> //used for sleep
+#include <unistd.h> //Used for sleep()
+
 
 enum days_of_the_week
 {
@@ -83,7 +83,7 @@ int main()
         for (int j = startingDay; j <= NUMBER_OF_DAYS; j++)
         {
             printWeekAndDay(i, j);
-            Sleep(1000);
+            sleep(1);
         }
     }
 }
