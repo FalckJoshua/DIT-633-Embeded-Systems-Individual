@@ -1,7 +1,7 @@
 #include <stdio.h>  //Used for printf()
 #include <stdlib.h> //Used for atoi()
-// #include <unistd.h> //Used for sleep()
-#include <windows.h> //Used for Sleep()
+#include <unistd.h> //Used for sleep()
+//#include <windows.h> //Used for Sleep()
 
 enum days_of_the_week
 {
@@ -40,6 +40,20 @@ enum days_of_the_week getStartingDay()
     return startingDay;
 }
 
+void validDayandWeekInput(enum weeks week, enum days_of_the_week today)
+{
+    if (week < 1 || week > 5)
+    {
+        printf("invalid week");
+        return 0;
+    }
+    if (today < 1 || today > 7)
+    {
+        printf("invalid day");
+        return 0;
+    }
+}
+
 void printWeekAndDay(enum weeks week, enum days_of_the_week today)
 {
     printf("Week: %d, ", week);
@@ -71,20 +85,19 @@ void printWeekAndDay(enum weeks week, enum days_of_the_week today)
 
 int main()
 {
-    printf("Provide Starting week: ");
     enum weeks startingWeek = getStartingWeek();
-
-    printf("Provide Starting day: ");
     enum days_of_the_week startingDay = getStartingDay();
+    validDayandWeekInput(startingWeek, startingDay);
 
     for (int i = startingWeek; i < NUMBER_OF_WEEKS; i++)
     {
         for (int j = startingDay; j < NUMBER_OF_DAYS; j++)
         {
             printWeekAndDay(i, j);
-            Sleep(1000);
+            sleep(1);
         }
         startingDay = MONDAY;
 
     }
 }
+
