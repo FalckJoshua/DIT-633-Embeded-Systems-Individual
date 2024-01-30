@@ -1,43 +1,42 @@
 #include <stdio.h>  //Used for printf()
 #include <stdlib.h> //Used for atoi()
 #include <unistd.h> //Used for sleep()
-//#include <windows.h> //Used for Sleep()
 
 enum days_of_the_week
 {
     MONDAY = 1,    // by declaring the first element as one it will start counting from one instead of zero
-    TUESDAY,   // hold value 2
+    TUESDAY,   // because I initialised monday as 1, tuesday will be 2..
     WEDNESDAY, // hold value 3
     THURSDAY,  // hold value 4
     FRIDAY,    // hold value 5
-    SATURDAY,
-    SUNDAY,
-    NUMBER_OF_DAYS
+    SATURDAY, // hold value 6
+    SUNDAY, // hold value 7
+    NUMBER_OF_DAYS // holds value 8 and is used to determine the length of the enum
 };
 
 enum weeks
 {
-    WEEK1 = 1,
-    WEEK2,
-    WEEK3,
-    WEEK4,
-    WEEK5,
-    NUMBER_OF_WEEKS
+    WEEK1 = 1, // by declaring the first element as one it will start counting from one instead of zero
+    WEEK2, // because I initialised week1 as 1, week2 will be 2..
+    WEEK3, // hold value 3
+    WEEK4, // hold value 4
+    WEEK5, // hold value 5
+    NUMBER_OF_WEEKS // hold value 6 and is used to determine the length of the enum
 };
 
-enum weeks getStartingWeek()
+enum weeks getStartingWeek() // function to get the starting week and return it as an enum
 {
-    char startWeekString[3];
-    scanf("%s", startWeekString);
-    enum weeks startingWeek = atoi(startWeekString);
-    return startingWeek;
+    char startWeekString[3]; // declare a string to store the input
+    scanf("%s", startWeekString); // get the input from the user and store it in the string
+    enum weeks startingWeek = atoi(startWeekString); // convert the string to an int and store it in the enum
+    return startingWeek;// return the enum
 }
-enum days_of_the_week getStartingDay()
+enum days_of_the_week getStartingDay() // function to get the starting day and return it as an enum
 {
-    char startDayString[3];
-    scanf("%s", startDayString);
-    enum days_of_the_week startingDay = atoi(startDayString);
-    return startingDay;
+    char startDayString[3]; // declare a string to store the input
+    scanf("%s", startDayString); // get the input from the user and store it in the string
+    enum days_of_the_week startingDay = atoi(startDayString); // convert the string to an int and store it in the enum
+    return startingDay; // return the enum
 }
 
 void validDayandWeekInput(enum weeks week, enum days_of_the_week today)
@@ -56,7 +55,7 @@ void validDayandWeekInput(enum weeks week, enum days_of_the_week today)
 
 void printWeekAndDay(enum weeks week, enum days_of_the_week today)
 {
-    printf("Week: %d, ", week);
+    printf("Week %d, ", week);
     switch (today)
     {
     case 1:
