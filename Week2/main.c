@@ -39,63 +39,63 @@ enum days_of_the_week getStartingDay() // function to get the starting day and r
     return startingDay; // return the enum
 }
 
-void validDayandWeekInput(enum weeks week, enum days_of_the_week today)
+void validDayandWeekInput(enum weeks week, enum days_of_the_week today) // function to check if the input is valid
 {
-    if (week < 1 || week > 5)
+    if (week < 1 || week > 5) // if the week is less than 1 or greater than 5
     {
         printf("invalid week");
-        return 0;
+        return 0; // return 0
     }
-    if (today < 1 || today > 7)
+    if (today < 1 || today > 7) // if the day is less than 1 or greater than 7
     {
         printf("invalid day");
-        return 0;
+        return 0; // return 0
     }
 }
 
-void printWeekAndDay(enum weeks week, enum days_of_the_week today)
+void printWeekAndDay(enum weeks week, enum days_of_the_week today) // function to print the week and day
 {
     printf("Week %d, ", week);
-    switch (today)
+    switch (today) // switch statement to print the day
     {
-    case 1:
+    case 1: // if today is 1 print monday
         printf("Monday\n");
-        break;
-    case 2:
+        break; // break out of the switch statement
+    case 2: // if today is 2 print tuesday
         printf("Tuesday\n");
-        break;
-    case 3:
+        break; // break out of the switch statement
+    case 3: // if today is 3 print wednesday
         printf("Wednesday\n");
-        break;
-    case 4:
+        break; // break out of the switch statement
+    case 4: // if today is 4 print thursday
         printf("Thursday\n");
-        break;
-    case 5:
+        break; // break out of the switch statement
+    case 5: // if today is 5 print friday
         printf("Friday\n");
-        break;
-    case 6:
+        break; // break out of the switch statement
+    case 6: // if today is 6 print saturday
         printf("Saturday\n");
-        break;
-    case 7:
+        break; // break out of the switch statement
+    case 7: // if today is 7 print sunday
         printf("Sunday\n");
-        break;
+        break; // break out of the switch statement
     }
 }
 
-int main()
+int main() // main function
 {
-    enum weeks startingWeek = getStartingWeek();
-    enum days_of_the_week startingDay = getStartingDay();
-    validDayandWeekInput(startingWeek, startingDay);
+    enum weeks startingWeek = getStartingWeek(); // get the starting week
+    enum days_of_the_week startingDay = getStartingDay(); // get the starting day
+    validDayandWeekInput(startingWeek, startingDay); // check if the input is valid if not exit the program
 
-    for (int i = startingWeek; i < NUMBER_OF_WEEKS; i++)
+    for (int i = startingWeek; i < NUMBER_OF_WEEKS; i++) // for loop while the week is less than 5 (number of weeeks)
     {
-        for (int j = startingDay; j < NUMBER_OF_DAYS; j++)
+        for (int j = startingDay; j < NUMBER_OF_DAYS; j++) // for loop while the day is less than 7 (number of days)
         {
             printWeekAndDay(i, j);
-            sleep(1);
+            sleep(1); // sleep for 1 second before printing the next day
         }
-        startingDay = MONDAY;
+        startingDay = MONDAY; // reset the day to monday after the end of the week
 
     }
 }
