@@ -53,7 +53,12 @@ int **matrixMaker()
     {
         for (int j = 0; j < matrix_y; j++) // loop through the columns
         {
-            scanf("%d", &matrix[i][j]); // store the input in the matrix
+            int integrityCheck = scanf("%d", &matrix[i][j]); // store the input in the matrix and store the return value in integrityCheck
+            if (integrityCheck < 1)                          // check if the user inserted a valid integer
+            {
+                printf("invalid");
+                exit (0); // exit the program
+            }
         }
     }
     return matrix; // return the matrix
