@@ -37,7 +37,7 @@ void addMatrix(int **matrix1, int **matrix2)
         }
     }
     printf("The sum is:\n");
-    printMatrix(result);
+    printMatrix(result); // call the function to print the result matrix
 }
 
 // function to create a matrix
