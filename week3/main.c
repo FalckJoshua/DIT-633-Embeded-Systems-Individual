@@ -33,7 +33,7 @@ void addMatrix(int **matrix1, int **matrix2)
     {
         for (int j = 0; j < matrix_y; j++) // loop through the columns
         {
-            result[i][j] = matrix1[i][j] + matrix2[i][j]; // add the elements of the two matrices and store the result in the result matrix
+            result[i][j] = *(*(matrix1 + i) + j) + *(*(matrix2 + i) + j);; // add the elements of the two matrices and store the result in the result matrix
         }
     }
     printf("The sum is:\n");
