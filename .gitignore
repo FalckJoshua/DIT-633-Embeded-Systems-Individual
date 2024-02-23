@@ -16,3 +16,8 @@ week3/main.exe
 week3/pointerTest.c
 week3/pointerTest.exe
 week4/main.exe
+*.vsidx
+*.lock
+.vscode/.vscode
+.vs
+CppProperties.json
